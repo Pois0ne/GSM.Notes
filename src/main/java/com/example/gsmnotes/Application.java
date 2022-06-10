@@ -32,7 +32,7 @@ public class Application extends javafx.application.Application {
         //TestInitializer.fillWithSampleData();
 
         Device f = new Device();
-        f.setName("test device");
+        f.setName("Новое устройство");
         f.setModel("...");
         f.setSn("...");
         f.setBrand("...");

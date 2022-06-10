@@ -78,7 +78,6 @@ public class DeviceController implements Initializable {
         deviceListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Device>() {
             @Override
             public void changed(ObservableValue<? extends Device> observable, Device oldValue, Device newValue) {
-                // надо запомнить вершину, которая была выбрана и разблокировать кнопку. при нажатии на кнопку запомненную вершину удалить
                 selectedDevice = (Device)deviceListView.getSelectionModel().getSelectedItem();
                 if (newValue == null){
                     btnSave.setDisable(true);
@@ -92,19 +91,11 @@ public class DeviceController implements Initializable {
 
     }
 
-    // Кнопка.setDisabled(true)
 
-    // Здесь будем хранить идентификатор устройства, которое прямо сейчас редактирует пользователь
     Device selectedDevice = null;
 
     public void deviceSelected(MouseEvent mouseEvent, Device selectedItem) throws IOException {
-
-        // TODO: !реализуем логику сохранения данных об устройстве
-        /*
-            если устройство уже было открыто, то нужно сохранить изменения
-        */
         if (selectedDevice != null) {
-            // selectedDevice.setId( обращаемся к соответствующему элементу интерфейса .getText() );
             this.deviceService.updateDevice(selectedDevice);
         }
 
@@ -116,26 +107,7 @@ public class DeviceController implements Initializable {
         deviceInfo.setText(selectedDevice.getHistory());
         deviceDatePicker.setValue(selectedDevice.getDate());
         deviceIMEITextField.setText(selectedDevice.getImei());
-
-        //TODO !DADDF
-
-        // обращаемся к соответствующему элементу интерфейса .setText() ...
-
-
-        System.out.println(selectedItem.getName());
-
-        /*
-        TODO: !сделать интерфейс, чтобы можно было редактировать отдельные поля!
-        одно большое поле не прокатит!
-
-        у тебя много полей у Девайса, это структурированные данные, которые должна быть возможность
-        просматривать и изменять отдельно
-
-
-        TODO: !предлагаю также вместо вкладок использовать одно окно, в котором можно просматривать, так и редактировать поля
-        для этого просто нужно сделать кнопку Редактировать-Сохранить, чтобы текстовые поля стали доступны (setDisabled)
-
-         */
+        //System.out.println(selectedItem.getName());
     }
 
     public void btnCreateClicked(ActionEvent actionEvent) {
