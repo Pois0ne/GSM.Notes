@@ -57,7 +57,20 @@
                                  </children>
                               </HBox>
                               <TextArea fx:id="deviceInfo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="325.0" prefWidth="295.0" />
-                              <DatePicker fx:id="deviceDatePicker" prefHeight="27.0" prefWidth="291.0" />
+                              <DatePicker fx:id="deviceDatePicker" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="291.0" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="IMEI">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="deviceIMEITextField" prefHeight="27.0" prefWidth="202.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </center>

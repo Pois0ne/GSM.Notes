@@ -12,12 +12,10 @@ public class Device {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-
     private String name;
     private String model;
     private String brand;
-    private int imei;
+    private String imei;
     private String sn;
     private String history;
     private LocalDate date;
@@ -35,8 +33,12 @@ public class Device {
 //        this.id = id;
 //    }
 
-    public void setImei(int imei) {
+    public void  setImei(String imei) {
         this.imei = imei;
+    }
+
+    public String getImei() {
+        return imei;
     }
 
     public void setSn(String sn) {
@@ -47,9 +49,6 @@ public class Device {
         this.history = history;
     }
 
-//    private int id;
-
-
     public String getModel() {
         return model;
     }
@@ -58,13 +57,8 @@ public class Device {
         return brand;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public int getImei() {
-        return imei;
-    }
+
 
     public String getSn() {
         return sn;

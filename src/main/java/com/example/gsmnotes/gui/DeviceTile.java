@@ -39,7 +39,7 @@ public class DeviceTile extends HBox {
 
     public void setDevice(Device d) {
         this.TTitle.setText(d.getName());
-        // TODO: если будем отображать иконки для устройств,
+        // TODO: !если будем отображать иконки для устройств,
         // то будем делать приблизительно так
         // this.TImage.setImage(new Image(getClass().getResource("ikonka_iphona.png").toString()));
         this.TText.setText(d.getModel());

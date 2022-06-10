@@ -1,5 +1,6 @@
 package com.example.gsmnotes;
 
+import com.example.gsmnotes.devices.Device;
 import com.example.gsmnotes.devices.DeviceService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,7 +29,16 @@ public class Application extends javafx.application.Application {
         context = SpringApplication.run(Application.class);
         deviceService = context.getBean(DeviceService.class);
 
-        TestInitializer.fillWithSampleData();
+        //TestInitializer.fillWithSampleData();
+
+        Device f = new Device();
+        f.setName("test device");
+        f.setModel("...");
+        f.setSn("...");
+        f.setBrand("...");
+        f.setHistory("...");
+        f.setImei("35XXXXXXXXX");
+        deviceService.addDevice(f);
 
         stage.setTitle("GSM.Notes");
 

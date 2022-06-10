@@ -13,21 +13,15 @@ public class DeviceService {
 
     public List<Device> getAllDevices() {
         return this.repository.findAll();
-//        ArrayList<Device> a = new ArrayList<>();
-//        Device d = new Device();
-//        d.setName("Hello, friends");
-//        d.setModel("hehehehe");
-//        a.add(d);
-//        return a;
     }
 
     public Device addDevice(Device d) {
         return this.repository.save(d);
     }
 
-//    public Device deleteDevice(Device d){
-//        return this.repository.delete(selectedDevice);
-//    }
+    public void deleteDevice(Device d){
+        this.repository.delete(d);
+    }
     //todo Select device
 
     public Device updateDevice(Device d) {
